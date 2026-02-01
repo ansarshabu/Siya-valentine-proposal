@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Proposal 💖</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #b30059;
+      font-size: 42px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background-color: #666;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>💘 Siya, will you be my Valentine? 💘</h1>
+    <button id="yes" onclick="yesClicked()">YES 💖</button>
+    <button id="no">NO 🙃</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no");
+
+    noButton.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <h1 style="color:#b30059; text-align:center; margin-top:20%">
+          YAYYY SIYA!! 💖🥰 <br>
+          You just made me the happiest person ❤️
+        </h1>
+      `;
+    }
+  </script>
+
+</body>
+</html>
