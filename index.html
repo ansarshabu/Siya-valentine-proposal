@@ -1,77 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Valentine Proposal 💖</title>
-  <style>
-    body {
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<title>Valentine Proposal 💖</title>
 
-    .container {
-      text-align: center;
-    }
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ffd1dc, #ffe6f0);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
 
-    h1 {
-      color: #b30059;
-      font-size: 42px;
-    }
+  .container {
+    text-align: center;
+  }
 
-    button {
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 20px;
-    }
+  h1 {
+    color: #b30059;
+    font-size: 36px;
+  }
 
-    #yes {
-      background-color: #ff4d6d;
-      color: white;
-    }
+  p {
+    font-size: 20px;
+    color: #444;
+  }
 
-    #no {
-      background-color: #666;
-      color: white;
-      position: absolute;
-    }
-  </style>
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background-color: #666;
+    color: white;
+    position: absolute;
+  }
+
+  #result {
+    display: none;
+  }
+
+  .gifs img {
+    width: 260px;
+    margin: 10px;
+    border-radius: 12px;
+  }
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>💘 Siya, will you be my Valentine? 💘</h1>
-    <button id="yes" onclick="yesClicked()">YES 💖</button>
-    <button id="no">NO 🙃</button>
+<div class="container" id="question">
+  <h1>💖 Siya, will you be my Valentine? 💖</h1>
+  <button id="yes" onclick="yesClicked()">YES 💘</button>
+  <button id="no" onmouseover="moveNo()">NO 😳</button>
+</div>
+
+<div class="container" id="result">
+  <h1>Ufff angene athum nadenn… thanks aachutty 😻😂</h1>
+  <p>Onn poyeda avedn valentine polm.. aadhym poyi aa supply ezthi theerk 🤣</p>
+
+  <div class="gifs">
+    <!-- GIF 1 -->
+    <img src="PASTE_FIRST_GIF_LINK_HERE" alt="gif1">
+
+    <!-- GIF 2 -->
+    <img src="PASTE_SECOND_GIF_LINK_HERE" alt="gif2">
   </div>
+</div>
 
-  <script>
-    const noButton = document.getElementById("no");
+<script>
+  function yesClicked() {
+    document.getElementById("question").style.display = "none";
+    document.getElementById("result").style.display = "block";
+  }
 
-    noButton.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-      noButton.style.left = `${x}px`;
-      noButton.style.top = `${y}px`;
-    });
-
-    function yesClicked() {
-      document.body.innerHTML = `
-        <h1 style="color:#b30059; text-align:center; margin-top:20%">
-          YAYYY SIYA!! 💖🥰 <br>
-          You just made me the happiest person ❤️
-        </h1>
-      `;
-    }
-  </script>
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+</script>
 
 </body>
 </html>
